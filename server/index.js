@@ -3,10 +3,10 @@ const mysql = require("mysql2");
 const cors = require("cors");
 
 const app = express();
-app.use(cors()); // React からのリクエストを許可
+// React からのリクエストを許可
+app.use(cors()); 
 app.use(express.json());
 
-// MySQL 接続
 const db = mysql.createConnection({
   host: "xxxxxxxxxxxx",
   user: "xxxxxxxxxxxx",
@@ -16,9 +16,9 @@ const db = mysql.createConnection({
 
 db.connect((err) => {
   if (err) {
-    console.error("MySQL 接続エラー:", err);
+    console.error("接続エラー:", err);
   } else {
-    console.log("MySQL 接続成功！");
+    console.log("接続成功！");
   }
 });
 
